@@ -32,7 +32,7 @@
                     </td>
 
                     <td>
-                        <input class="tamanho" type="text" required onkeypress="mascara(this, nome)" size="20">
+                        <input name="nome" class="tamanho" type="text" required onkeypress="mascara(this, nome)" size="20">
                     </td>
                 </tr>
 
@@ -43,7 +43,7 @@
                         </td>
     
                         <td>
-                            <input type="text" required onkeypress="mascara(this, telefone)" maxlength="15">
+                            <input name="telefone" type="text" required onkeypress="mascara(this, telefone)" maxlength="15">
                         </td>
                     </tr>
                     
@@ -56,7 +56,7 @@
                         </td>
     
                         <td>
-                            <input type="email" required onkeypress="mascara(this, email)" >
+                            <input name = "email" type="email" required onkeypress="mascara(this, email)" >
                         </td>
                     </tr>
                     
@@ -69,7 +69,7 @@
 
                     <td>
                         <label for="">
-                            <input  type="text" required onkeypress="mascara(this, data)" maxlength="10"> (DD:MM:AAAA)
+                            <input  name="dt" type="text" required onkeypress="mascara(this, data)" maxlength="10"> (DD:MM:AAAA)
                         </label>
                     </td>
                     <td>
@@ -114,7 +114,7 @@
                     </td>
 
                     <td>
-                        <input type="text" onkeypress="mascara(this, cep)" maxlength="10">
+                        <input name="cep" type="text" onkeypress="mascara(this, cep)" maxlength="10">
 
                     <!-- UF -->
                     <td align="right">UF:
@@ -148,7 +148,6 @@
                 </tr>
             </table>
         </fieldset>
-        <input class="btn1" type="submit" onclick="return validar" value="Enviar">
     </form>
 
 </body>
