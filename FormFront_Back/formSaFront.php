@@ -32,7 +32,7 @@
                     </td>
 
                     <td>
-                        <input name="nome" class="tamanho" type="text" required onkeypress="mascara(this, nome)" size="20">
+                        <input name="Nome" class="tamanho" type="text" required onkeypress="mascara(this, nome)" size="20">
                     </td>
                 </tr>
 
@@ -43,7 +43,7 @@
                         </td>
     
                         <td>
-                            <input name="telefone" type="text" required onkeypress="mascara(this, telefone)" maxlength="15">
+                            <input name="Telefone" type="text" required onkeypress="mascara(this, telefone)" maxlength="15">
                         </td>
                     </tr>
                     
@@ -56,7 +56,7 @@
                         </td>
     
                         <td>
-                            <input name = "email" type="email" required onkeypress="mascara(this, email)" >
+                            <input name = "Email" type="email" required onkeypress="mascara(this, email)" >
                         </td>
                     </tr>
                     
@@ -69,7 +69,7 @@
 
                     <td>
                         <label for="">
-                            <input  name="dt" type="text" required onkeypress="mascara(this, data)" maxlength="10"> (DD:MM:AAAA)
+                            <input  name="Dt" type="text" required onkeypress="mascara(this, data)" maxlength="10"> (DD:MM:AAAA)
                         </label>
                     </td>
                     <td>
@@ -79,11 +79,11 @@
                 <tr>
                     <tr> <!-- ENDEREÇO -->
                         <td align="right">
-                            <label for="endereco">Endereço:</label>
+                            <label for="Endereco">Endereço:</label>
                         </td>
     
                         <td>
-                            <input class="tamanho" type="text" name="endereco" id="" required>
+                            <input class="tamanho" type="text" name="Endereco" id="" required>
                         </td>
                     </tr>
                 </tr>
@@ -94,7 +94,7 @@
                     </td>
 
                     <td>
-                        <input class="tamanho" type="text" name="bairro" id="" required>
+                        <input class="tamanho" type="text" name="Bairro" id="" required>
                     </td>
                 </tr>
 
@@ -104,7 +104,7 @@
                     </td>
 
                     <td>
-                        <input class="tamanho2" type="text" name="cidade" id="" required>
+                        <input class="tamanho2" type="text" name="Cidade" id="" required>
                     </td>
                 </tr>
 
@@ -114,11 +114,11 @@
                     </td>
 
                     <td>
-                        <input name="cep" type="text" onkeypress="mascara(this, cep)" maxlength="10">
+                        <input name="Cep" type="text" onkeypress="mascara(this, cep)" maxlength="10">
 
                     <!-- UF -->
                     <td align="right">UF:
-                        <select id="estado" name="estado" class="estados">
+                        <select id="estado" name="Estado" class="estados">
                             <option value="RS">Rio Grande do Sul</option>
                             <option value="SP">Sao Paulo</option>
                             <option value="PR">Parana</option>
@@ -134,7 +134,7 @@
                     </td>
 
                     <td>
-                        <input class="tamanhoo2" type="text" name="pais" id="" value="brasil" required>
+                        <input class="tamanhoo2" type="text" name="Pais" id="" value="brasil" required>
                     </td>
                 </tr>
 

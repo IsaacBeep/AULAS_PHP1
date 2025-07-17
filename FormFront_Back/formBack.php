@@ -7,28 +7,48 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <?php
-        if (isset($_GET['nome'])
-          && isset($_GET['telefone']) 
-          && isset($_GET['email'])
-          && isset($_GET['dt']) 
-          && isset($_GET['endereco'])
-          && isset($_GET['bairro'])
-          && isset($_GET['cidade'])
-          && isset($_GET['cep'])
-          && isset($_GET['estado'])
-          && isset($_GET['pais'])){
-            echo "Recebido o cliente ".$_GET['nome'],"<br/>";
-            echo " que tem o numero ",$_GET['telefone'],"<br/>";
-            echo " que tem o email ",$_GET['email'],"<br/>";
-            echo " que tem a data de nascimento ",$_GET['dt'],"<br/>";
-           echo " que tem o endereço ",$_GET['endereco'],"<br/>";
-            echo " que esta no bairro ",$_GET['bairro'],"<br/>";
-            echo " que esta na cidade ",$_GET['cidade'],"<br/>";
-            echo " que tem o cep ",$_GET['cep'],"<br/>";
-            echo " que esta no estado ",$_GET['estado'],"<br/>";
-            echo " que esta no pais ",$_GET['pais'],"<br/>";
-        }
-    ?>
+    <FORM>
+        <fieldset>
+                <div>
+                    <h3>DADOS DO FUNCIONARIO</h3>
+                </div>
+
+                <div id="linha">
+                    <hr>
+                </div>
+                <br>
+
+                <div id="dados">
+                    <?php
+                        if (isset($_GET['Nome'])
+                        && isset($_GET['Telefone']) 
+                        && isset($_GET['Email'])
+                        && isset($_GET['Dt']) 
+                        && isset($_GET['Endereco'])
+                        && isset($_GET['Bairro'])
+                        && isset($_GET['Cidade'])
+                        && isset($_GET['Cep'])
+                        && isset($_GET['Estado'])
+                        && isset($_GET['Pais'])){
+                            echo " O cliente ".$_GET['Nome'],"<br/>";
+                            echo " Possui o numero ",$_GET['Telefone'],"<br/>";
+                            echo " Tem o email ",$_GET['Email'],"<br/>";
+                            echo " Nasceu em ",$_GET['Dt'],"<br/>";
+                            echo " Atualmente mora em ",$_GET['Endereco'],"<br/>";
+                            echo " No bairro ",$_GET['Bairro'],"<br/>";
+                            echo " Na cidade ",$_GET['Cidade'],"<br/>";
+                            echo " O cep ",$_GET['Cep'],"<br/>";
+                            echo " No estado ",$_GET['Estado'],"<br/>";
+                            echo " No pais ",$_GET['Pais'],"<br/>";
+                        }
+                    ?>
+            
+                </div>
+
+        </fieldset>
+
+    </FORM>
+    
+    
 </body>
 </html>
