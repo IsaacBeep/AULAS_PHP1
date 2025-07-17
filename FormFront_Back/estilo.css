@@ -1,0 +1,35 @@
+
+
+body{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 40px;
+    text-align: center;
+}
+
+form{
+    background-color: rgb(235, 235, 235);
+    padding: 40px;
+    max-width: 600px;
+    margin: auto;
+}
+
+input[type="submit"]{
+    background-color: rgb(59, 142, 208);
+    color: rgb(255, 255, 255);
+    border-color:  rgb(59, 142, 208);
+    cursor: pointer;
+    display: inline-block;
+
+}
+
+input[type="button"]{
+    background-color: rgb(59, 142, 208);
+    color: rgb(255, 255, 255);
+    border-color: rgb(59, 142, 208);
+    cursor: pointer;
+    display: inline-block;
+    
+}
