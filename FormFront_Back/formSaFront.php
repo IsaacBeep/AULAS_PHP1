@@ -9,7 +9,7 @@
     <script src="formulario.js"></script>
 </head>
 <body>
-    <form method="GET" action = "formBack.php" id="Formulario">
+    <form method="GET" action="formBack.php" id="Formulario">
         <!-- DADOS PESSOAIS-->
          <fieldset>
             <div>
@@ -28,7 +28,7 @@
             <table border="0" cellspacing="5">
                 <tr> <!-- NOME -->
                     <td align="right">
-                        <label for="nome" name = "nome">Nome:</label>
+                        <label for="nome">Nome:</label>
                     </td>
 
                     <td>
@@ -148,6 +148,7 @@
                 </tr>
             </table>
         </fieldset>
+        <input class="btn1" type="submit" onclick="return validar" value="Enviar">
     </form>
 
 </body>
