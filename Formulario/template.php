@@ -23,7 +23,7 @@
             <br>
             <label>
                 Prazo:
-                <input type="text" name="parazo"/>
+                <input type="text" name="prazo"/>
             </label>
             <br>
             <br>
