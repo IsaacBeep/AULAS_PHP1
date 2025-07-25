@@ -28,6 +28,7 @@ session_start();
 }
 
     $lista_tarefas = buscar_tarefas($conexao);
+    
 
     include "template.php";
     
