@@ -33,6 +33,6 @@
                     '{$tarefa['concluida']}',
                 }
         ";
-        mysqli_query($conexao,$sqlGravar);
+        mysqli_query($conexao,$sqlGravar); 
     }
 ?>
