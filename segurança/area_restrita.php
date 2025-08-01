@@ -1,5 +1,5 @@
 <?php
-echo "<h1> Àrea Restrita </h1>";
+echo "<h1> Àrea Restrita  </h1>";
 echo "<p>Você não deveria esta aqui, mas conseguiu acessar devido a uma falha de segurança</p>";
 echo "<p>Isso mostra como ataques SQL podem compremeter sistemas sem proteção adequada</p>";
 
