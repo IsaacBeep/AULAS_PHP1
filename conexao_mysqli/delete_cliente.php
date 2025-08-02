@@ -1,3 +1,4 @@
+<!-- Feito por Isaac Souza --> <!-- Feito por Isaac Souza --> <!-- Feito por Isaac Souza -->
 <?php
 session_start();
 require_once "conexao.php";
@@ -34,7 +35,6 @@ $conexao->close();
 </head>
 <body>
 
-<!-- Navbar com dropdown -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="front.php">HOME</a>
@@ -56,15 +56,12 @@ $conexao->close();
     </div>
 </nav>
 
-<!-- Conteúdo -->
 <div class="container mt-5">
     <h2 class="text-center">Deletar Cliente</h2>
     <p class="text-center text-muted">Digite o ID do cliente para remover do sistema.</p>
 
-    <!-- Exibe mensagem -->
     <?= $mensagem ?>
 
-    <!-- Formulário -->
     <form method="POST" class="mt-4">
         <div class="mb-3">
             <label for="id_cliente" class="form-label">ID do Cliente:</label>

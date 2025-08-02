@@ -1,3 +1,4 @@
+<!-- Feito por Isaac Souza --> <!-- Feito por Isaac Souza --> <!-- Feito por Isaac Souza -->
 <?php
 
 $nomeservidor = "localhost";

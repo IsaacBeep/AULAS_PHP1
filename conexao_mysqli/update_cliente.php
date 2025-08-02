@@ -1,3 +1,4 @@
+<!-- Feito por Isaac Souza --> <!-- Feito por Isaac Souza --> <!-- Feito por Isaac Souza -->
 <?php
 session_start();
 require_once 'conexao.php';
@@ -6,7 +7,6 @@ $conexao = conectadb();
 $cliente = null;
 $id_cliente = null;
 
-// Buscar cliente pelo ID
 if (isset($_POST['buscar'])) {
     $id_cliente = intval($_POST['id_cliente']);
     $stmt = $conexao->prepare("SELECT * FROM cliente WHERE id_cliente = ?");
@@ -15,9 +15,8 @@ if (isset($_POST['buscar'])) {
     $result = $stmt->get_result();
     $cliente = $result->fetch_assoc();
     $stmt->close();
-}
+} 
 
-// Atualizar cliente
 if (isset($_POST['atualizar'])) {
     $id_cliente = $_POST['id_cliente'];
     $nome = $_POST['nome'];
@@ -48,7 +47,6 @@ $conexao->close();
 </head>
 <body>
 
-<!-- Navbar com dropdown Navegar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="front.php">HOME</a>
@@ -70,12 +68,10 @@ $conexao->close();
     </div>
 </nav>
 
-<!-- Conteúdo principal -->
 <div class="container mt-5">
     <h2 class="text-center">Atualizar Cliente</h2>
     <p class="text-center text-muted">Busque um cliente pelo ID para editar seus dados.</p>
 
-    <!-- Formulário de busca -->
     <form method="POST" class="mb-4">
         <div class="input-group">
             <input type="number" name="id_cliente" class="form-control" placeholder="Digite o ID do cliente" required>
@@ -83,7 +79,6 @@ $conexao->close();
         </div>
     </form>
 
-    <!-- Formulário de edição (aparece só se encontrar o cliente) -->
     <?php if ($cliente): ?>
         <form method="POST">
             <input type="hidden" name="id_cliente" value="<?= $cliente['id_cliente'] ?>">
@@ -115,7 +110,6 @@ $conexao->close();
     <?php endif; ?>
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+<!-- Feito por Isaac Souza --> <!-- Feito por Isaac Souza --> <!-- Feito por Isaac Souza -->
 <?php
 session_start();
 ?>
@@ -36,7 +37,6 @@ session_start();
     <h1 class="text-center">Inserir Cliente</h1>
     <p></p>
 
-    <!-- Formulário com método POST -->
     <form method="POST" action="">
         <div class="mb-3">
             <label for="nome" class="form-label">Nome:</label>
@@ -62,26 +62,22 @@ session_start();
     </form>
 
     <?php
-    // Verifica se o formulário foi enviado
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         require_once 'conexao.php';
 
         $conexao = conectadb();
 
-        // Dados do formulário
         $nome = $_POST['nome'];
         $endereco = $_POST['endereco'];
         $telefone = $_POST['telefone'];
         $email = $_POST['email'];
 
-        // Prepara a SQL com placeholders
         $stmt = $conexao->prepare("INSERT INTO cliente (nome, endereco, telefone, email) VALUES (?, ?, ?, ?)");
 
         if (!$stmt) {
             die("Erro na preparação da consulta: " . $conexao->error);
         }
 
-        // Vincula os parâmetros e executa
         $stmt->bind_param("ssss", $nome, $endereco, $telefone, $email);
 
         if ($stmt->execute()) {
@@ -90,7 +86,6 @@ session_start();
             echo "<div class='alert alert-danger mt-3'>Erro ao adicionar cliente: " . $stmt->error . "</div>";
         }
 
-        // Fecha declaração e conexão
         $stmt->close();
         $conexao->close();
     }
