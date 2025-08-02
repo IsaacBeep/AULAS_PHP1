@@ -25,8 +25,6 @@ session_start();
                         <li><a class="dropdown-item" href="select_cliente.php">Listar Cliente</a></li>
                         <li><a class="dropdown-item" href="update_cliente.php">Atualizar Cliente</a></li>
                         <li><a class="dropdown-item" href="delete_cliente.php">Deletar Cliente</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="back/cadastro.php">Cadastro (Back)</a></li>
                     </ul>
                 </li>
             </ul>

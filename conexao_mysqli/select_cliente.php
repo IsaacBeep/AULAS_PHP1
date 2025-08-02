@@ -17,12 +17,29 @@ $conexao->close();
 </head>
 <body>
 
+<!-- Navbar com dropdown Navegar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container">
         <a class="navbar-brand" href="front.php">HOME</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                        Navegar
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="insert_cliente.php">Inserir Cliente</a></li>
+                        <li><a class="dropdown-item" href="select_cliente.php">Listar Clientes</a></li>
+                        <li><a class="dropdown-item" href="update_cliente.php">Atualizar Cliente</a></li>
+                        <li><a class="dropdown-item" href="delete_cliente.php">Deletar Cliente</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
+<!-- Conteúdo principal -->
 <div class="container mt-5">
     <h2 class="text-center">Clientes Cadastrados</h2>
 
@@ -56,5 +73,7 @@ $conexao->close();
     <?php endif; ?>
 </div>
 
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

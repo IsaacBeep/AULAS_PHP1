@@ -25,8 +25,6 @@ session_start();
                         <li><a class="dropdown-item" href="select_cliente.php">Listar Cliente</a></li>
                         <li><a class="dropdown-item" href="update_cliente.php">Atualizar Cliente</a></li>
                         <li><a class="dropdown-item" href="delete_cliente.php">Deletar Cliente</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="back/cadastro.php">Cadastro (Back)</a></li>
                     </ul>
                 </li>
             </ul>
@@ -36,7 +34,6 @@ session_start();
 
 <div class="container mt-5">
     <h1 class="text-center">Inserir Cliente</h1>
-    <h2 class="text-center">Feito por: Isaac Silva de Lima Souza</h2>
     <p></p>
 
     <!-- Formulário com método POST -->
