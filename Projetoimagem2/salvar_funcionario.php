@@ -49,8 +49,44 @@ function redimensionarImagem($imagem, $largura, $altura){
                 $nomeFoto = $_FILES['foto']['name']; //pega o nome original do arquivo
                 $tipoFoto = $_FILES['foto']['type']; //pega o tipo mime da imagem
 
+                //Redimensionar imgaem
+                // O codigo abaixo cuja variavel é "tmp_name" é o caminho temporario do arquivo 
+                $foto = redimensionarImagem($_FILES['foto']['tmp_name'],300.400);
 
+                //Insere no banco de dados usando sql preparad
+                $sql = "INSERT INTO funcionarios(nome,telefone,nome_foto,tipo_foto,foto) VALUES (:nome,:telefone,:nome_foto,:tipo_foto,:foto)";
+                $stmt = $pdo->prepare($sql); //Responsavel por preparar a query para evitar ataque de sql injection
+                $stmt->bindParam(':nome', $nome); //Liga os parametros as variaveis
+                $stmt->bindParam(':telefone', $telefone); //Liga os parametros as variaveis
+                $stmt->bindParam(':nome_foto', $nomeFoto); //Liga os parametros as variaveis
+                $stmt->bindParam(':tipo_foto', $tipoFoto); //Liga os parametros as variaveis
+                $stmt->bindParam(':foto', $foto , PDO::PARAM_LOB); //O lob - large Object Usado para dados binarios como imagem
+                if($stmt->execute()){
+                    echo "funcionario cadastrado com sucesso!";
+                } else{
+                    echo"Erro ao cadastrar o usuario";
+                }
+
+            }else {
+                echo "Erro ao fazer upload da foto! Codigo: " . $_FILES['foto']['error'];
             }
         }
+    }catch(PDOException $e){
+        echo"Erro. " . $e->getMessage(); //Mostra o erro se houver
     }
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Imagens</title>
+</head>
+<body>
+    <h1>Lista de Imagens</h1>
+
+    <a href="consulta_fucionario.php">Listar funcionarios</a>
+    
+</body>
+</html>
