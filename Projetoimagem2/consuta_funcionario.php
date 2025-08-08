@@ -1,20 +1,20 @@
 <?php
-    //Configuraçao do banco de dados
+    //Configuração do banco de dados
     $host = 'localhost';
     $dbname = 'armazenaimagem';
     $username = 'root';
     $password = '';
 
 try {
-    //Conexao com o banco usando pdo
-    $pdo = new pdo("mysql:host=$host;dbname:$dbname",$username,$password);
+    //Conexão com o banco usando PDO
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     //Recupera todos os funcionarios do banco de dados
     $sql = "SELECT id,nome FROM funcionarios";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
-    $funcionarios = $stmt->fetchAll(PDO::FETCH_ASSOC);//busca todos os resultados como uma matriz associativa
+    $funcionarios = $stmt->fetchAll(PDO::FETCH_ASSOC); //busca todos os resultados como uma matriz associativa
 
     //verifica se foi solicitado a exclusão de um funcionario
     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['excluir_id'])) {
@@ -22,11 +22,11 @@ try {
         //prepara a query de exclusão
         $sql_excluir = "DELETE FROM funcionarios WHERE id = :id";
         $stmt_excluir = $pdo->prepare($sql_excluir);
-        $stmt_excluir->bindParam('id',$excluir_id,PDO::PARAM_INT);
+        $stmt_excluir->bindParam(':id', $excluir_id, PDO::PARAM_INT);
         $stmt_excluir->execute();
 
-        //Redireciona para evitar reenvio do fomulario
-        header("location: ".$_SERVER['PHP_SELF']);
+        //Redireciona para evitar reenvio do formulário
+        header("location: " . $_SERVER['PHP_SELF']);
         exit();
     }
 } catch(PDOException $e){
@@ -39,17 +39,17 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Funcionarios</title>
+    <title>Consulta de Funcionários</title>
 </head>
 <body>
-    <h1>Consulta de Funcionarios</h1>
+    <h1>Consulta de Funcionários</h1>
     
     <ul>
-        <?php foreach($funcionarios as $funcionario) ?>
+        <?php foreach($funcionarios as $funcionario): ?>
         <li>
             <!-- CODIGO ABAIXO CRIA LINK PARA VISUALIZAR DETALHES DO FUNCIONARIO -->
-            <a href="visualizar_funcionario.php? id= <?=$funcionario['id']?>">
-                <?= htmlspecialcharsl($funcionario['nome']) ?>
+            <a href="visualizar_funcionario.php?id=<?=$funcionario['id']?>">
+                <?= htmlspecialchars($funcionario['nome']) ?>
             </a>
 
             <!-- FORMULARIO PARA EXCLUIR FUNCIONARIO -->
