@@ -1,7 +1,7 @@
 <?php
     //Configuraçao do banco de dados
     $host = 'localhost';
-    $dbname = 'armazenaimagem';
+    $dbname = 'armazenaimagemm';
     $username = 'root';
     $password = '';
 
@@ -44,10 +44,25 @@ try{
 <body>
         <h1>Dados do funcionario</h1>
         <p>Nome:<?=htmlspecialchars($funcionario['nome'])?></p>
+        <p>Telefone:<?=htmlspecialchars($funcionario['telefone'])?></p>
+        <p>Foto:</p>
+        <img src="data:"<?=$funcionario['tipo_foto']?>;base64,<?=base64_encode($funcionario['foto'])?> alt="Foto do Funcionario">
 
+        <form method="POST">
+            <input type="hidden" name="excluid_id" value="<?= $id?>">
+            <button type="submit">Excluir Funcionario</button>
+        </form>
 </body>
 </html>
 
-}
-}
-}
+        <?php
+        }else{
+            echo"Funcionario não encontrado.";
+        }
+        }else{
+            echo"Id do funcionario não foi fornecida.";
+        }
+       }catch(PDOException $e){
+        echo"Erro: " . $e->getMessage();
+       }
+?>

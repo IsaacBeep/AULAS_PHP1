@@ -45,7 +45,7 @@
 
     //Configuraçao do banco de dados
     $host = 'localhost';
-    $dbname = 'armazena_imagem';
+    $dbname = 'armazena_imagemm';
     $username = 'root';
     $password = '';
 

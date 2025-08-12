@@ -1,7 +1,7 @@
 <?php
     //Configuração do banco de dados
     $host = 'localhost';
-    $dbname = 'armazenaimagem';
+    $dbname = 'armazenaimagemm';
     $username = 'root';
     $password = '';
 
